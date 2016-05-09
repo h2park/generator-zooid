@@ -1,33 +1,35 @@
 var generators = require('yeoman-generator');
 
 module.exports = generators.Base.extend({
-  askFor: function() {
+
+  prompting: function () {
     var self = this;
     var done = this.async();
-    var prompts = [
+    return this.prompt(
       {
+        type: 'input',
         name: 'zooidname',
-        message: 'What would you like your zooid to be called? (if you want zooid-spinner, enter \"Spinner\")',
+        message: 'What would you like your zooid to be called? (if you want zooid-ui-spinner, enter \"Spinner\")',
         'default': 'Zooid'
       },
       {
+        type : 'input',
         name: 'author',
         message: 'Who is the author?',
         'default': 'Octoblu Inc'
-      },
-      {
+      },{
+        type: 'input',
         name: 'githubUser',
         message: 'What is your github username?',
         'default': 'octoblu'
       }
-    ];
-
-    this.prompt(prompts, function(props) {
-      self.zooidname = props.zooidname;
-      self.author = props.author;
-      self.githubUrl = "https://github.com/" + props.githubUser;
+    ).then(function (answers) {
+      self.zooidname = answers.zooidname;
+      self.zooidnamekebab = 'zooid-ui-' + answers.zooidname.toLowerCase();
+      self.author = answers.author;
+      self.githubUrl = "https://github.com/" + answers.githubUser;
       return done();
-    })
+    }.bind(this));
   },
   projectFiles: function() {
     this.template('src/_zooid.css', 'src/' + self.zooidname + '.css');
