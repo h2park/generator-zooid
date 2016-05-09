@@ -23,6 +23,7 @@
     "app"
   ],
   "dependencies": {
+    "kebab-case": "^1.0.0",
     "yeoman-generator": "^0.23.3"
   }
 }
