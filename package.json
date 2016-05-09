@@ -1,0 +1,28 @@
+{
+  "name": "generator-zooid",
+  "version": "1.0.0",
+  "description": "Generates a zooid component",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No test specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/octoblu/generator-zooid.git"
+  },
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "author": "Octoblu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/octoblu/generator-zooid/issues"
+  },
+  "homepage": "https://github.com/octoblu/generator-zooid#readme",
+  "files": [
+    "app"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^0.23.3"
+  }
+}
