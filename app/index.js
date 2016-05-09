@@ -7,16 +7,18 @@ module.exports = generators.Base.extend({
     var prompts = [
       {
         name: 'zooidname',
-        message: 'What would you like your zooid to be called?',
-        'default': 'zooid-sample'
+        message: 'What would you like your zooid to be called? (if you want zooid-spinner, enter \"Spinner\")',
+        'default': 'Zooid'
       },
       {
         name: 'author',
-        message: 'Who is the author?'
+        message: 'Who is the author?',
+        'default': 'Octoblu Inc'
       },
       {
         name: 'githubUser',
-        message: 'What is your github username?'
+        message: 'What is your github username?',
+        'default': 'octoblu'
       }
     ];
 
