@@ -1,5 +1,4 @@
 var generators = require('yeoman-generator');
-var kebabCase = require('kebab-case');
 var _ = require('lodash');
 
 module.exports = generators.Base.extend({
@@ -25,8 +24,8 @@ module.exports = generators.Base.extend({
       }
     ];
     return this.prompt(prompts).then(function (answers) {
-      self.zooidnamekebab = 'zooid-ui-' + kebabCase(answers.zooidname);
-      self.zooidname = _.capitalize(answers.zooidname);
+      self.zooidname = answers.zooidname.charAt(0).toUpperCase() + answers.zooidname.slice(1);
+      self.zooidnamekebab = 'zooid-ui-' + _.kebabCase(answers.zooidname);
       self.author = answers.author;
       self.githubUrl = "https://github.com/" + answers.githubUser;
     });
