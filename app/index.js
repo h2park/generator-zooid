@@ -1,5 +1,6 @@
 var generators = require('yeoman-generator');
 var kebabCase = require('kebab-case');
+var _ = require('lodash');
 
 module.exports = generators.Base.extend({
 
@@ -9,7 +10,7 @@ module.exports = generators.Base.extend({
       {
         type: 'input',
         name: 'zooidname',
-        message: 'What would you like your zooid to be called? (if you want zooid-ui-page-header, enter \"PageHeader\")',
+        message: 'What would you like your zooid to be called? (camelCase)',
         default: 'Zooid'
       },{
         type : 'input',
@@ -24,8 +25,8 @@ module.exports = generators.Base.extend({
       }
     ];
     return this.prompt(prompts).then(function (answers) {
-      self.zooidname = answers.zooidname;
-      self.zooidnamekebab = 'zooid-ui' + kebabCase(answers.zooidname);
+      self.zooidnamekebab = 'zooid-ui-' + kebabCase(answers.zooidname);
+      self.zooidname = _.capitalize(answers.zooidname);
       self.author = answers.author;
       self.githubUrl = "https://github.com/" + answers.githubUser;
     });
