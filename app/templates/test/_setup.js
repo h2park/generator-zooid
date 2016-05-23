@@ -1,8 +1,5 @@
-require('babel-register')();
-
-var jsdom = require('jsdom').jsdom;
-
-var exposedProperties = ['window', 'navigator', 'document'];
+const jsdom = require('jsdom').jsdom;
+const exposedProperties = ['window', 'navigator', 'document'];
 
 global.document = jsdom('');
 global.window = document.defaultView;
@@ -17,4 +14,4 @@ global.navigator = {
   userAgent: 'node.js'
 };
 
-documentRef = document;
+const documentRef = document;
