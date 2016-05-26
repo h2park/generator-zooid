@@ -9,7 +9,7 @@ module.exports = generators.Base.extend({
       {
         type: 'input',
         name: 'zooidname',
-        message: 'What would you like your zooid to be called? (for zooid-ui-page-header, enter pageHeader)',
+        message: 'What is your zooid\'s name? (for zooid-ui-page-header, enter pageHeader)',
         default: 'sampleZooid'
       },{
         type : 'input',
