@@ -20,7 +20,7 @@ var plugins = [
 ]
 
 module.exports = {
-  devtool: 'cheap-module-source-map',
+  devtool: 'cheap-source-map',
   resolve: {
     extensions: ['', '.js']
   },
@@ -29,7 +29,7 @@ module.exports = {
     filename: 'bundle.js',
     path: path.join(__dirname, 'dist'),
     libraryTarget: 'umd',
-    library: 'ZooidUI<%= zooidname %>'
+    library: '<%= zooidname %>'
   },
   externals: {
    react: {
@@ -45,7 +45,7 @@ module.exports = {
       {
         test: /\.js$/,
         loaders: ['babel-loader'],
-        exclude: /node_modules/
+        include: /src/
       },
       {
         test: /\.css$/,

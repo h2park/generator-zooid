@@ -47,5 +47,8 @@ module.exports = generators.Base.extend({
     this.template('_babelrc', '.babelrc', context);
     this.template('_webpack.config.js', 'webpack.config.js', context);
     this.template('_gitignore', '.gitignore', context);
+    this.template('.storybook/_config.js', '.storybook/config.js', context);
+    this.template('.storybook/_webpack.config.js', '.storybook/webpack.config.js', context);
+    this.template('stories/_index.js', 'stories/index.js', context);
   }
 });
