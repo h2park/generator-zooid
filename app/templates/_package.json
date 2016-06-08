@@ -5,6 +5,7 @@
   "main": "dist/bundle.js",
   "scripts": {
     "clean": "rimraf lib dist coverage",
+    "start": "npm run storybook",
     "storybook": "start-storybook -p 9001",
     "build": "webpack",
     "test": "nyc --require babel-core/register --require babel-polyfill mocha",
