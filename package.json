@@ -1,6 +1,6 @@
 {
   "name": "generator-zooid",
-  "version": "3.0.1",
+  "version": "4.0.0",
   "description": "Generates a zooid component",
   "main": "index.js",
   "scripts": {
@@ -20,7 +20,8 @@
   },
   "homepage": "https://github.com/octoblu/generator-zooid#readme",
   "files": [
-    "app"
+    "app",
+    "component"
   ],
   "dependencies": {
     "lodash": "^4.12.0",

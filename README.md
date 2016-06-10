@@ -1,7 +1,18 @@
 # generator-zooid
-Generates a basic zooid component
+Generates a basic zooid
 
-`npm i -g generator-zooid`
+## Install
+```
+npm install --global yo
+npm install --global generator-zooid
+```
 
-`yo zooid`
-
+## Usage
+#### Make a new zooid
+```
+yo zooid
+```
+#### Make a new react component
+```
+yo zooid:component
+```
