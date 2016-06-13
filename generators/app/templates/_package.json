@@ -29,9 +29,11 @@
   },
   "homepage": "<%= githubUrl %>/<%= zooidnamekebab %>#readme",
   "nyc": {
+    "include": [
+      "src"
+    ],
     "exclude": [
-      "src/**/*.spec.js",
-      "dist"
+      "src/**/*.spec.js"
     ]
   },
   "devDependencies": {
