@@ -26,7 +26,7 @@ module.exports = generators.Base.extend({
     return this.prompt(prompts).then(function (answers) {
       var camelCased = _.camelCase(answers.zooidname);
       self.zooidname = camelCased.charAt(0).toUpperCase() + camelCased.slice(1);
-      self.zooidnamekebab = 'zooid-ui-' + _.kebabCase(self.zooidname);
+      self.zooidnamekebab = 'zooid-' + _.kebabCase(self.zooidname);
       self.author = answers.author;
       self.githubUrl = "https://github.com/" + answers.githubUser;
     });
