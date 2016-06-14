@@ -32,24 +32,27 @@ module.exports = generators.Base.extend({
     });
   },
   writing: function() {
+    this.composeWith('zooid:component', {
+      args: [this.zooidname]
+    },
+    {
+      local: require.resolve('../component')
+    });
     var context = {
       zooidname: this.zooidname,
       zooidnamekebab: this.zooidnamekebab,
       author: this.author,
       githubUrl: this.githubUrl
     }
-    this.template('src/_zooid.css', this.zooidname + '/src/' + this.zooidname + '.css', context);
-    this.template('src/_zooid.js', this.zooidname + '/src/' + this.zooidname + '.js', context);
-    this.template('src/_zooid.spec.js', this.zooidname + '/src/' + this.zooidname + '.spec.js', context);
-    this.template('src/_index.js', this.zooidname + '/src/index.js', context);
-    this.template('test/_setup.js', this.zooidname + '/test/.setup.js', context);
-    this.template('test/_mocha.opts', this.zooidname + '/test/mocha.opts', context);
-    this.template('_package.json', this.zooidname + '/package.json', context);
-    this.template('_babelrc', this.zooidname + '/.babelrc', context);
-    this.template('_webpack.config.js', this.zooidname + '/webpack.config.js', context);
-    this.template('_gitignore', this.zooidname + '/.gitignore', context);
-    this.template('.storybook/_config.js', this.zooidname + '/.storybook/config.js', context);
-    this.template('.storybook/_webpack.config.js', this.zooidname + '/.storybook/webpack.config.js', context);
-    this.template('stories/_index.js', this.zooidname + '/stories/index.js', context);
+    this.template('src/_index.js', 'src/index.js', context);
+    this.template('test/_setup.js', 'test/.setup.js', context);
+    this.template('test/_mocha.opts', 'test/mocha.opts', context);
+    this.template('_package.json', 'package.json', context);
+    this.template('_babelrc', '.babelrc', context);
+    this.template('_webpack.config.js', 'webpack.config.js', context);
+    this.template('_gitignore', '.gitignore', context);
+    this.template('.storybook/_config.js', '.storybook/config.js', context);
+    this.template('.storybook/_webpack.config.js', '.storybook/webpack.config.js', context);
+    this.template('stories/_index.js', 'stories/index.js', context);
   }
 });
