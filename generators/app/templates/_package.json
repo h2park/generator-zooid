@@ -7,6 +7,8 @@
     "clean": "rimraf lib dist coverage",
     "start": "npm run storybook",
     "storybook": "start-storybook -p 9001",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
     "build": "webpack",
     "test": "nyc --require babel-core/register --require babel-polyfill mocha",
     "test:watch": "mocha -w -R mocha-multi --reporter-options spec=-,mocha-osx-reporter=-"
