@@ -1,3 +1,3 @@
-import <%= zooidname %> from './<%= zooidname %>';
+import <%= zooidname %> from './<%= zooidname %>'
 
-export default <%= zooidname %>;
+export default <%= zooidname %>
