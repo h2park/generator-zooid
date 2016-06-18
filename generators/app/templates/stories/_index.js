@@ -5,5 +5,5 @@ import <%= zooidname %> from '../src'
 
 storiesOf('<%= zooidname %>', module)
   .add('Basic', () => (
-    <<%= zooidname %>/>
+    <<%= zooidname %> />
   ))
