@@ -1,2 +1,2 @@
-import <%= zooidname %> from './<%= zooidname %>'
-export default <%= zooidname %>
+import <%= zooidName %> from './<%= zooidName %>'
+export default <%= zooidName %>

@@ -1,9 +1,9 @@
 import React from 'react'
 import { storiesOf, action } from '@kadira/storybook'
 
-import <%= zooidname %> from '../src'
+import <%= zooidName %> from '../src'
 
-storiesOf('<%= zooidname %>', module)
+storiesOf('<%= zooidName %>', module)
   .add('Basic', () => (
-    <<%= zooidname %> />
+    <<%= zooidName %> />
   ))

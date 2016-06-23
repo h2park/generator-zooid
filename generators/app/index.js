@@ -8,7 +8,7 @@ module.exports = generators.Base.extend({
     var prompts = [
       {
         type: 'input',
-        name: 'zooidname',
+        name: 'zooidName',
         message: 'What is your Zooid\'s name?',
         default: 'Sample Zooid'
       },{
@@ -24,29 +24,30 @@ module.exports = generators.Base.extend({
       }
     ];
     return this.prompt(prompts).then(function (answers) {
-      var camelCased = _.camelCase(answers.zooidname);
-      self.zooidname = camelCased.charAt(0).toUpperCase() + camelCased.slice(1);
-      self.zooidnamekebab = 'zooid-' + _.kebabCase(self.zooidname);
+      var camelCased = _.camelCase(answers.zooidName);
+      self.zooidName = camelCased.charAt(0).toUpperCase() + camelCased.slice(1);
+      self.zooidNameKebab = 'zooid-' + _.kebabCase(self.zooidName);
       self.author = answers.author;
       self.githubUrl = "https://github.com/" + answers.githubUser;
     });
   },
   writing: function() {
     this.composeWith('zooid:component', {
-      args: [this.zooidname]
+      args: [this.zooidName]
     },
     {
       local: require.resolve('../component')
     });
     var context = {
-      zooidname: this.zooidname,
-      zooidnamekebab: this.zooidnamekebab,
+      zooidName: this.zooidName,
+      zooidNameKebab: this.zooidNameKebab,
       author: this.author,
       githubUrl: this.githubUrl
     }
     this.template('src/_index.js', 'src/index.js', context);
     this.template('test/_setup.js', 'test/.setup.js', context);
     this.template('test/_mocha.opts', 'test/mocha.opts', context);
+    this.template('_README.md', 'README.md', context);
     this.template('_package.json', 'package.json', context);
     this.template('_babelrc', '.babelrc', context);
     this.template('_webpack.config.js', 'webpack.config.js', context);

@@ -29,7 +29,7 @@ module.exports = {
     filename: 'bundle.js',
     path: path.join(__dirname, 'dist'),
     libraryTarget: 'umd',
-    library: '<%= zooidname %>'
+    library: '<%= zooidName %>'
   },
   externals: {
    react: {

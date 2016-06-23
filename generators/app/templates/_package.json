@@ -1,7 +1,7 @@
 {
-  "name": "<%= zooidnamekebab %>",
+  "name": "<%= zooidNameKebab %>",
   "version": "0.0.1",
-  "description": "<%= zooidname %>",
+  "description": "<%= zooidName %>",
   "main": "dist/bundle.js",
   "scripts": {
     "clean": "rimraf lib dist coverage",
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+<%= githubUrl %>/<%= zooidnamekebab %>.git"
+    "url": "git+<%= githubUrl %>/<%= zooidNameKebab %>.git"
   },
   "keywords": [
     "zooid",
@@ -31,9 +31,9 @@
   "author": "<%= author %>",
   "license": "MIT",
   "bugs": {
-    "url": "<%= githubUrl %>/<%= zooidnamekebab %>/issues"
+    "url": "<%= githubUrl %>/<%= zooidNameKebab %>/issues"
   },
-  "homepage": "<%= githubUrl %>/<%= zooidnamekebab %>#readme",
+  "homepage": "<%= githubUrl %>/<%= zooidNameKebab %>#readme",
   "nyc": {
     "include": [
       "src"

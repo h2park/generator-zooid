@@ -16,12 +16,13 @@ module.exports = generators.Base.extend({
       {
         type: 'input',
         name: 'componentName',
-        message: 'What is your component\'s name?',
+        message: 'Component name:',
         default: 'reactComponent'
       },{
         type: 'confirm',
         name: 'stateful',
-        message: 'Would you like this component to be stateful?'
+        message: 'Would you like this component to be stateful?',
+        default: false
       }
     ];
     return this.prompt(prompts).then(function (answers) {
