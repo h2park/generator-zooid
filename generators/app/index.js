@@ -28,6 +28,7 @@ module.exports = generators.Base.extend({
       self.zooidName = camelCased.charAt(0).toUpperCase() + camelCased.slice(1);
       self.zooidNameKebab = 'zooid-' + _.kebabCase(self.zooidName);
       self.author = answers.author;
+      self.githubUser = answers.githubUser;
       self.githubUrl = "https://github.com/" + answers.githubUser;
     });
   },
@@ -42,7 +43,8 @@ module.exports = generators.Base.extend({
       zooidName: this.zooidName,
       zooidNameKebab: this.zooidNameKebab,
       author: this.author,
-      githubUrl: this.githubUrl
+      githubUrl: this.githubUrl,
+      githubUser: this.githubUser
     }
     this.template('src/_index.js', 'src/index.js', context);
     this.template('test/_setup.js', 'test/.setup.js', context);

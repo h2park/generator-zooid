@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/octoblu/<%= zooidNameKebab %>.svg?branch=master)](https://travis-ci.org/octoblu/<%= zooidNameKebab %>)
 [![npm version](https://badge.fury.io/js/<%= zooidNameKebab %>.svg)](http://badge.fury.io/js/<%= zooidNameKebab %>)
+[![Code Climate](https://codeclimate.com/github/<%= githubUser %>/<%= zooidNameKebab %>.png)](https://codeclimate.com/github/<%= githubUser %>/<%= zooidNameKebab %>)
 [![Slack Status](http://community-slack.octoblu.com/badge.svg)](http://community-slack.octoblu.com)
 
 ## Install
