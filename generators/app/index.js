@@ -60,5 +60,7 @@ module.exports = generators.Base.extend({
     this.template('_stylelintrc', '.stylelintrc', context);
     this.template('_eslintrc', '.eslintrc', context);
     this.template('_eslintignore', '.eslintignore', context);
+    this.template('_codeclimate.yml', '.codeclimate.yml', context);
+    this.template('_travis.yml', '.travis.yml', context);
   }
 });
