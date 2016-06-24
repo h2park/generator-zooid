@@ -15,7 +15,8 @@
     "lint:css:fix": "stylefmt ./src/**/*.css",
     "build": "webpack",
     "test": "nyc --require babel-core/register --require babel-polyfill mocha",
-    "test:watch": "mocha -w -R mocha-multi --reporter-options spec=-,mocha-osx-reporter=-"
+    "test:watch": "mocha -w -R mocha-multi --reporter-options spec=-,mocha-osx-reporter=-",
+    "coverage": "nyc report --reporter=lcov"
   },
   "repository": {
     "type": "git",
@@ -39,7 +40,8 @@
       "src"
     ],
     "exclude": [
-      "src/**/*.spec.js"
+      "src/**/*.spec.js",
+      "src/**/*.css"
     ]
   },
   "devDependencies": {
