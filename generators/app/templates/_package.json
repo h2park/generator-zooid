@@ -4,19 +4,20 @@
   "description": "<%= zooidName %>",
   "main": "dist/bundle.js",
   "scripts": {
+    "build": "webpack",
+    "build:storybook": "build-storybook -o storybook-build",
     "clean": "rimraf lib dist coverage",
-    "start": "npm run storybook",
-    "storybook": "start-storybook -p 9001",
+    "coverage": "nyc report --reporter=lcov",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:fix": "npm run lint:js:fix && npm run lint:css:fix",
     "lint:js": "eslint src stories",
     "lint:js:fix": "eslint src stories --fix",
     "lint:css": "stylelint ./src/**/*.css",
     "lint:css:fix": "stylefmt ./src/**/*.css",
-    "build": "webpack",
+    "start": "npm run storybook",
+    "storybook": "start-storybook -p 9001",
     "test": "nyc --require babel-core/register --require babel-polyfill mocha",
-    "test:watch": "mocha -w -R mocha-multi --reporter-options spec=-,mocha-osx-reporter=-",
-    "coverage": "nyc report --reporter=lcov"
+    "test:watch": "mocha -w -R mocha-multi --reporter-options spec=-,mocha-osx-reporter=-"
   },
   "repository": {
     "type": "git",
@@ -45,7 +46,8 @@
     ]
   },
   "devDependencies": {
-    "@kadira/storybook": "^1.28.1",
+    "@kadira/react-storybook-addon-info": "^3.0.7",
+    "@kadira/storybook": "^1.35.1",
     "babel-cli": "^6.7.7",
     "babel-core": "^6.7.7",
     "babel-loader": "^6.2.4",
@@ -54,7 +56,7 @@
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.9.0",
     "chai": "^3.5.0",
-    "chai-enzyme": "^0.4.2",
+    "chai-enzyme": "^0.5.0",
     "css-loader": "^0.23.1",
     "css-modules-require-hook": "^4.0.1",
     "enzyme": "^2.3.0",
@@ -65,7 +67,7 @@
     "eslint-plugin-jsx-a11y": "^1.0.3",
     "eslint-plugin-react": "^5.0.1",
     "extract-text-webpack-plugin": "^1.0.1",
-    "ignore-styles": "^2.0.0",
+    "ignore-styles": "^4.0.0",
     "jsdom": "^9.1.0",
     "mocha": "^2.4.5",
     "mocha-multi": "^0.9.0",
@@ -78,7 +80,7 @@
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0",
     "style-loader": "^0.13.1",
-    "stylefmt": "^3.5.0",
+    "stylefmt": "^4.0.0",
     "stylelint": "^6.6.0",
     "stylelint-config-standard": "^9.0.0",
     "webpack": "^1.13.0"

@@ -57,6 +57,7 @@ module.exports = generators.Base.extend({
     this.template('.storybook/_config.js', '.storybook/config.js', context);
     this.template('.storybook/_webpack.config.js', '.storybook/webpack.config.js', context);
     this.template('stories/_index.js', 'stories/index.js', context);
+    this.template('scripts/_publish-storybook.sh', 'scripts/publish-storybook.sh', context);
     this.template('_stylelintrc', '.stylelintrc', context);
     this.template('_eslintrc', '.eslintrc', context);
     this.template('_eslintignore', '.eslintignore', context);
