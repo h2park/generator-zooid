@@ -11,8 +11,4 @@ chai.use(chaiEnzyme())
 chai.use(sinonChai)
 
 describe('<<%= componentName %> />', () => {
-  it('should render nothing', () => {
-    const sut = shallow(<<%= componentName %> />)
-    expect(sut).to.be.empty
-  })
 })
