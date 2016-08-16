@@ -12,6 +12,10 @@ npm install --global generator-zooid
 ```
 yo zooid
 ```
+#### Make a new zooid application
+```
+yo zooid:application
+```
 #### Make a new react component
 ```
 yo zooid:component
