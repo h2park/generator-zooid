@@ -1,6 +1,6 @@
 {
   "name": "generator-zooid",
-  "version": "5.0.2",
+  "version": "6.0.0",
   "description": "Generates a zooid component",
   "main": "index.js",
   "scripts": {
