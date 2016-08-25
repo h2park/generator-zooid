@@ -9,7 +9,8 @@
     "semi": [2, "never"],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/jsx-no-bind": 0,
-    "react/prefer-stateless-function": 0
+    "react/prefer-stateless-function": 0,
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true, "optionalDependencies": false, "peerDependencies": false}]
   },
   "parserOptions": {
     "ecmaVersion": 6,
@@ -18,6 +19,11 @@
     }
   },
   "env": {
-    "mocha": true
+    "mocha": true,
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "jest": true,
+    "node": true
   }
 }

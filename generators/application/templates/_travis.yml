@@ -3,20 +3,22 @@ node_js:
 - '5'
 branches:
   only:
-  - "/^v[0-9]/"
-before_deploy:
+  - /^v[0-9]/
+env:
+  global: CDN=https://<%= appNameKebab %>-static.octoblu.com
+after_success:
 - npm run build
-addons:
-  code_climate:
-    repo_token: #get repo_token from https://codeclimate.com/dashboard
-before_script:
-- npm install -g codeclimate-test-reporter
-after_script:
-- npm run coverage
-- codeclimate-test-reporter < coverage/lcov.info
+- export PKG_VERSION="$(node -e 'console.log(require("./package.json").version)')"
+- if [ -z "$PKG_VERSION" ]; then echo 'Missing PKG_VERSION env' && exit 1; fi
+- mkdir -p dpl_assets/v$PKG_VERSION
+- cp -r dist/* dpl_assets/v$PKG_VERSION
 deploy:
-  provider: npm
-  email: serveradmin@octoblu.com
+- provider: s3
+  access_key_id: # access key id
+  secret_access_key: # make sure its secure
+  bucket: <%= appNameKebab %>-static.octoblu.com
+  local_dir: dpl_assets
   skip_cleanup: true
+  region: us-west-2
   on:
     tags: true

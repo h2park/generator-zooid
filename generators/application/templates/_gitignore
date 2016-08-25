@@ -1,5 +1,8 @@
-# build
+# Build directory
 dist
+
+# Deployment assets
+dpl_*
 
 # Logs
 logs
