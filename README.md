@@ -16,7 +16,7 @@ yo zooid
 #### Make a new zooid application
 Create a small application to use zooids
 ```
-yo zooid:application
+yo zooid:application app_name
 ```
 #### Make a new react component
 All zooids are composed of react components
