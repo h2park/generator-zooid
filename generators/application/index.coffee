@@ -10,15 +10,11 @@ helpers    = require '../helpers'
 class ZooidApplicationGenerator extends yeoman.Base
   constructor: (args, options, config) ->
     super
-
-    @argument 'appname', { type: String, required: true }
-
     @cwd = @destinationRoot()
     @pkg = @_readFileAsJSON 'package.json'
 
   initializing: =>
     console.log 'initializing...'
-    @appnameTitleCased = helpers.titleCase @appname
     @appname = _.kebabCase @appname
 
   prompting: =>
@@ -27,8 +23,14 @@ class ZooidApplicationGenerator extends yeoman.Base
     prompts = [
       {
         type: 'input',
-        name: 'author',
-        message: 'Who is the author?',
+        name: 'appname',
+        message: 'What\'s the project\'s name?',
+        default: @appname
+      },
+      {
+        type: 'input'
+        name: 'author'
+        message: 'Who is the author?'
         default: 'Octoblu Inc'
       },
       {
@@ -41,8 +43,13 @@ class ZooidApplicationGenerator extends yeoman.Base
 
     @prompt(prompts).then (answers) =>
       console.log 'Answers', answers
-      { @author, @githubUser } = answers
+
+      { @author, @githubUser, @appname } = answers
       @githubUrl = "https://github.com/#{@githubUser}"
+
+      @appnameTitleCased = helpers.titleCase @appname
+      @appname = _.kebabCase @appname
+
       return
 
   configuring: =>
