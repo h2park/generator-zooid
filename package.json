@@ -1,7 +1,7 @@
 {
   "name": "generator-zooid",
-  "version": "7.0.1",
-  "description": "Generates a zooid component",
+  "version": "7.0.2",
+  "description": "Yeoman generator for creating Zooid related things!",
   "main": "index.js",
   "scripts": {
     "test": "echo \"No test specified\""
