@@ -11,9 +11,10 @@ npm install --global generator-zooid
 ## Generators
 
 ### Zooid
-Create a new Zooid component to be published on [npm](http://npmjs.com/)
+A zooid or zoöid /ˈzoʊ.ɔɪd/ is a single animal that is part of a colonial animal. Zooids are micro components; their structure is similar to that of other solitary animals.
 
 ##### Usage
+To create a new Zooid:
 ```
 yo zooid
 ```
@@ -38,9 +39,10 @@ yo zooid
 - Coverage
 
 ### Zooid Application
-Create a microsite or application that will work well with Zooids
+Create a React microsite or application and use Zooids!
 
 ##### Usage
+To create a new application:
 ```
 yo zooid:application
 ```
@@ -67,6 +69,7 @@ yo zooid:application
 Quickly create a React component to be used in a Zooid or Zooid application
 
 ##### Usage
+To create a new component:
 ```
 yo zooid:component
 ```
