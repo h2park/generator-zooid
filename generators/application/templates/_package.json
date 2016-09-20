@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist",
+    "coverage": "nyc npm test",
     "build": "node scripts/build.js",
     "start": "node scripts/start.js",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
-    "test": "NODE_ENV=test mocha",
-    "test:watch": "npm run test -- --watch --reporter mocha-multi --reporter-options spec=-,mocha-osx-reporter=-"
+    "mocha:json": "mocha --reporter=json > coverage/mocha.json",
+    "test": "mocha",
+    "test:watch": "mocha -w -R mocha-multi --reporter-options spec=-,mocha-osx-reporter=-"
   },
   "keywords":[
     "zooid",
@@ -79,5 +81,24 @@
     "style-loader": "^0.13.1",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.15.0"
+  },
+  "nyc": {
+    "include": [
+      "src"
+    ],
+    "exclude": [
+      "src/**/*.spec.js",
+      "src/**/*.css"
+    ],
+    "cache": true,
+    "reporter": [
+      "text-summary",
+      "lcov",
+      "json"
+    ],
+    "require": [
+      "babel-core/register",
+      "babel-polyfill"
+    ]
   }
 }

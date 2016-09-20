@@ -7,16 +7,17 @@
     "build": "webpack",
     "build:storybook": "build-storybook -o storybook-build",
     "clean": "rimraf lib dist coverage",
-    "coverage": "nyc report --reporter=lcov",
+    "coverage": "nyc npm test",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:fix": "npm run lint:js:fix && npm run lint:css:fix",
     "lint:js": "eslint src stories",
     "lint:js:fix": "eslint src stories --fix",
     "lint:css": "stylelint ./src/**/*.css",
     "lint:css:fix": "stylefmt ./src/**/*.css",
+    "mocha:json": "mocha --reporter=json > coverage/mocha.json",
     "start": "npm run storybook",
     "storybook": "start-storybook -p 9001",
-    "test": "nyc --require babel-core/register --require babel-polyfill mocha",
+    "test": "mocha",
     "test:watch": "mocha -w -R mocha-multi --reporter-options spec=-,mocha-osx-reporter=-"
   },
   "repository": {
@@ -43,6 +44,16 @@
     "exclude": [
       "src/**/*.spec.js",
       "src/**/*.css"
+    ],
+    "cache": true,
+    "reporter": [
+      "text-summary",
+      "lcov",
+      "json"
+    ],
+    "require": [
+      "babel-core/register",
+      "babel-polyfill"
     ]
   },
   "devDependencies": {
@@ -71,7 +82,7 @@
     "mocha": "^3.0.0",
     "mocha-multi": "^0.9.1",
     "mocha-osx-reporter": "^0.1.2",
-    "nyc": "^7.1.0",
+    "nyc": "^8.1.0",
     "postcss-loader": "^0.9.1",
     "react-addons-test-utils": "^15.3.0",
     "rimraf": "^2.5.2",
