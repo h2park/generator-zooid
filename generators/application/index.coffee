@@ -104,6 +104,10 @@ class ZooidApplicationGenerator extends yeoman.Base
     @copy 'scripts/start.js', 'scripts/start.js'
     @copy 'scripts/run-nginx.sh', 'scripts/run-nginx.sh'
 
+    @copy 'src/ducks/_store.js', 'src/ducks/store.js'
+    @copy 'src/ducks/example-duck/_index.js', 'src/ducks/example-duck/index.js'
+    @copy 'src/ducks/example-duck/_index.spec.js', 'src/ducks/example-duck/index.spec.js'
+
   _updatePkgJSON: (context) =>
     unless @pkg?
       @template '_package.json', 'package.json', context

@@ -26,7 +26,7 @@ module.exports = generators.Base.extend({
     return this.prompt(prompts).then(function (answers) {
       var camelCased = _.camelCase(answers.zooidName);
       self.zooidName = camelCased.charAt(0).toUpperCase() + camelCased.slice(1);
-      self.zooidNameKebab = 'zooid-' + _.kebabCase(self.zooidName);
+      self.zooidNameKebab = _.kebabCase(self.zooidName);
       self.author = answers.author;
       self.githubUser = answers.githubUser;
       self.githubUrl = "https://github.com/" + answers.githubUser;
