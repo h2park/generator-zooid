@@ -7,6 +7,7 @@
     "clean": "rimraf dist",
     "coverage": "nyc npm test",
     "build": "node scripts/build.js",
+    "build:webpack": "NODE_ENV=production webpack --config webpack.config.prod.js",
     "start": "node scripts/start.js",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
@@ -88,8 +89,8 @@
     "strip-ansi": "^3.0.1",
     "styled-components": "^1.4.2",
     "style-loader": "^0.13.1",
-    "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.15.0"
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.3.0",
   },
   "nyc": {
     "include": [
