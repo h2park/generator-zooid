@@ -1,5 +1,5 @@
 # Generator Zooid
-Zooids are small [React](https://facebook.github.io/react/index.html) components used to build applications of any size. This generator will allow you to create a new Zooid, Zooid application, or a basic React component.
+Zooids are small [React](https://facebook.github.io/react/index.html) components used to build applications of any size. This generator will allow you to create a new Zooid, Zooid application, basic React component, Duck (Redux action/reducer group), or styled React component.
 
 ## Install
 To run this generator, you will need to install [Yeoman](http://yeoman.io/) and the generator itself...
@@ -78,3 +78,28 @@ yo zooid:component
 - Stateful or Stateless components
 - Co-located CSS
 - Includes test file
+
+### Duck
+Create a new Duck, which is simply an organized set of Actions and Reducers for your Redux project.
+
+##### Usage
+To create a new duck:
+```
+yo zooid:duck
+```
+
+##### Features
+- Organized actions and reducers
+
+### Styled Component
+Create a simple styled HTML element to use in React.
+
+##### Usage
+To create a new styled component:
+```
+yo zooid:styled-component
+```
+
+##### Features
+- Simple
+- Quick styling of HTML elements
