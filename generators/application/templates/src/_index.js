@@ -1,17 +1,16 @@
-import React from 'react'
-import { render } from 'react-dom'
-import { Provider } from 'react-redux'
-import { Router, browserHistory } from 'react-router'
-import { syncHistoryWithStore } from 'react-router-redux'
+import React from "react"
+import ReactDOM from "react-dom"
+import { Provider } from "react-redux"
 
-import routes from './config/routes'
-import store from './ducks/store'
+import App from "./containers/App"
+import store from "./ducks/store"
 
-const history = syncHistoryWithStore(browserHistory, store)
+import "suitcss-base"
+import "../public/index.css"
 
-render(
+ReactDOM.render(
   <Provider store={store}>
-    <Router history={history} routes={routes} />
+    <App />
   </Provider>,
-  document.getElementById('app')
+  document.getElementById("app")
 )

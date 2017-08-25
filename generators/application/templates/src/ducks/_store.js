@@ -1,17 +1,20 @@
-import { routerReducer } from 'react-router-redux'
-import { applyMiddleware, combineReducers, createStore } from 'redux'
-import createLogger from 'redux-logger'
-import thunk from 'redux-thunk'
+import { createStore, combineReducers, applyMiddleware } from "redux"
+import { createLogger } from "redux-logger"
+import promiseMiddleware from "redux-promise"
+import thunkMiddleware from "redux-thunk"
 
-import exampleDuck from '../ducks/example-duck'
+import exampleDuck from "./example-duck"
 
-const reducers = combineReducers({
-  routing: routerReducer,
-  exampleDuck: exampleDuck,
-})
+const loggerMiddleware = createLogger()
+const reducers = combineReducers({ exampleDuck })
 
-const logger = createLogger()
-const createStoreWithMiddleware = applyMiddleware(thunk, logger)
-const store   = createStore(reducers, createStoreWithMiddleware)
+const createStoreWithMiddleware = applyMiddleware(
+  authMiddleware,
+  loggerMiddleware,
+  promiseMiddleware,
+  thunkMiddleware,
+)
+
+const store = createStore(reducers, createStoreWithMiddleware)
 
 export default store
