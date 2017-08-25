@@ -9,7 +9,6 @@ const loggerMiddleware = createLogger()
 const reducers = combineReducers({ exampleDuck })
 
 const createStoreWithMiddleware = applyMiddleware(
-  authMiddleware,
   loggerMiddleware,
   promiseMiddleware,
   thunkMiddleware,

@@ -1,4 +1,4 @@
-test/.setup.js
+--require babel-register
 src/**/*.spec.js
 --require env-test
 --recursive
