@@ -58,7 +58,6 @@ module.exports = generators.Base.extend({
     this.template('src/containers/_app.js', 'src/containers/app.js', context);
     this.template('src/containers/_home.js', 'src/containers/home.js', context);
     this.template('src/_index.js', 'src/index.js', context);
-    this.template('test/_setup.js', 'test/.setup.js', context);
     this.template('test/_mocha.opts', 'test/mocha.opts', context);
     this.template('_gitignore', '.gitignore', context);
     this.template('_travis.yml', '.travis.yml', context);

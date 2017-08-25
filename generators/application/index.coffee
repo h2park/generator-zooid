@@ -89,7 +89,6 @@ class ZooidApplicationGenerator extends yeoman.Base
     @template 'src/containers/_app.js', 'src/containers/app.js', context
     @template 'src/containers/_home.js', 'src/containers/home.js', context
     @template 'src/_index.js', 'src/index.js', context
-    @template 'test/_setup.js', 'test/.setup.js', context
     @template 'test/_mocha.opts', 'test/mocha.opts', context
     @template '_travis.yml', '.travis.yml', context
     @template '_codeclimate.yml', '.codeclimate.yml', context
