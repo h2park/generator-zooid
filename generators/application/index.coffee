@@ -83,7 +83,6 @@ class ZooidApplicationGenerator extends yeoman.Base
     @template '_eslintrc', '.eslintrc', context
     @template '_eslintignore', '.eslintignore', context
     @template 'src/components/NotFound/_index.js', 'src/components/NotFound/index.js', context
-    @template 'src/components/NotFound/_index.spec.js', 'src/components/NotFound/index.spec.js', context
     @template 'src/components/NotFound/_styles.css', 'src/components/NotFound/styles.css', context
     @template 'src/config/_routes.js', 'src/config/routes.js', context
     @template 'src/containers/_app.js', 'src/containers/app.js', context

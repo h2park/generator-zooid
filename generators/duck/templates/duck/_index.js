@@ -6,9 +6,9 @@ export const createSpace = (space) => {
   return dispatch => {
     dispatch(createSpaceRequest(space))
 
-    return axios.post(`${GENISYS_FACTORY_SERVICE_URL}/v1/spaces`, space, getRequestAuthHeader())
-      .then(({ data }) => dispatch(createSpaceSuccess(data)))
-      .catch(error => dispatch(createSpaceFailure(error)))
+    // return axios.post(`${GENISYS_FACTORY_SERVICE_URL}/v1/spaces`, space)
+    //   .then(({ data }) => dispatch(createSpaceSuccess(data)))
+    //   .catch(error => dispatch(createSpaceFailure(error)))
   }
 }
 
