@@ -46,7 +46,7 @@ module.exports = generators.Base.extend({
     this.template('_webpack.config.prod.js', 'webpack.config.prod.js', context);
     this.template('_README.md', 'README.md', context);
     this.template('_package.json', 'package.json', context);
-    this.template('_index.html', 'index.html', context);
+    this.template('public/_index.html', 'index.html', context);
     this.template('_dev-server.js', 'dev-server.js', context);
     this.template('_babelrc', '.babelrc', context);
     this.template('_eslintrc', '.eslintrc', context);

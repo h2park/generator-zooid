@@ -78,7 +78,7 @@ class ZooidApplicationGenerator extends yeoman.Base
 
     @template '_README.md', 'README.md', context
     @template '_package.json', 'package.json', context
-    @template '_index.html', 'index.html', context
+    @template 'public/_index.html', 'public/index.html', context
     @template '_babelrc', '.babelrc', context
     @template '_eslintrc', '.eslintrc', context
     @template '_eslintignore', '.eslintignore', context
@@ -94,15 +94,13 @@ class ZooidApplicationGenerator extends yeoman.Base
     @template '_travis.yml', '.travis.yml', context
     @template '_codeclimate.yml', '.codeclimate.yml', context
 
-    @copy 'src/_favicon.ico', 'src/favicon.ico'
     @copy '_gitignore', '.gitignore'
     @copy '_webpack.config.dev.js', 'webpack.config.dev.js'
     @copy '_webpack.config.prod.js', 'webpack.config.prod.js'
     @copy '_webpack.config.test.js', 'webpack.config.test.js'
 
-    @copy 'scripts/build.js', 'scripts/build.js'
-    @copy 'scripts/start.js', 'scripts/start.js'
-    @copy 'scripts/run-nginx.sh', 'scripts/run-nginx.sh'
+    @copy 'public/_favicon.ico', 'public/favicon.ico'
+    @copy 'public/_index.css', 'public/index.css'
 
     @copy 'src/ducks/_store.js', 'src/ducks/store.js'
     @copy 'src/ducks/example-duck/_index.js', 'src/ducks/example-duck/index.js'
